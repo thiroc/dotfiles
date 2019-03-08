@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+alias dotfiles='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 #export PS1='[\u@\h \W]\$ '
 export PS1='\[\033[1;30m\][\[\033[0;32m\]\u@\h \W\[\033[1;30m\]]\[\033[0;32m\]\$\[\033[0m\] '
 
