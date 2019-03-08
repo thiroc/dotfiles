@@ -1,0 +1,2 @@
+#! /bin/sh
+rofi -show run -terminal urxvt -lines 5 -width 50
