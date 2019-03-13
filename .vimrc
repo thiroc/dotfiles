@@ -164,15 +164,8 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
 " configure tabwidth and insert spaces instead of tabs
-function! SetupEnvironment()
-	let l:path = expand('%:p')
-	if l:path =~ $HOME.'/work/aker'
-		setlocal expandtab tabstop=2 shiftwidth=2
-	else
-		setlocal noexpandtab tabstop=4 shiftwidth=4
-	endif
-endfunction
-autocmd! BufReadPost,BufNewFile * call SetupEnvironment()
+setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd FileType python setlocal expandtab tabstop=5 shiftwidth=4
 
 " configure custom command to be run inside a tmux tab
 " viml map <leader>nt :call VimuxRunCommand("<command-to-be-run>")
