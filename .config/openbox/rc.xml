@@ -346,6 +346,16 @@
         <command>touchpadtoggle</command>
       </action>
     </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+		  <command>sudo ~/bin/scripts/bright up</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+		  <command>sudo ~/bin/scripts/bright down</command>
+      </action>
+    </keybind>
     <keybind key="W-k">
       <action name="MoveRelative">
         <x>0</x>
