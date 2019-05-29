@@ -10,6 +10,8 @@ export PS1='\[\033[1;30m\][\[\033[0;32m\]\u@\h \W\[\033[1;30m\]]\[\033[0;32m\]\$
 
 export EDITOR="vim"
 export VISUAL="vim"
+export BROWSER="w3m"
+export GBROWSER="w3m"
 
 # Support for accents in us layout
 setxkbmap -layout us -variant intl
@@ -21,6 +23,7 @@ function tmn() {
 
 export -f tmn
 
+# ALIASES
 alias dotfiles='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias ls='ls --color=auto'
 alias mut='neomutt'
@@ -29,4 +32,5 @@ alias nsb='newsboat'
 alias rai='rainbowstream'
 alias ran='ranger'
 alias tma='tmux attach-session'
+alias tunb='task proj:estudos.unb'
 
