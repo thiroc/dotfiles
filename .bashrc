@@ -12,6 +12,7 @@ export EDITOR="vim"
 export VISUAL="vim"
 export BROWSER="w3m"
 export GBROWSER="w3m"
+export XDG_CONFIG_HOME="~/.config"
 
 # Support for accents in us layout
 setxkbmap -layout us -variant intl
@@ -34,3 +35,9 @@ alias ran='ranger'
 alias tma='tmux attach-session'
 alias tunb='task proj:estudos.unb'
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/thiroc/caos/google-cloud-sdk/path.bash.inc' ]; then . '/home/thiroc/caos/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/thiroc/caos/google-cloud-sdk/completion.bash.inc' ]; then . '/home/thiroc/caos/google-cloud-sdk/completion.bash.inc'; fi
