@@ -1,5 +1,5 @@
 # vim: ft=conf nospell
-browser firefox
+browser w3m %u
 always-display-description true
 goto-next-feed no
 save-path ~/caos
@@ -12,11 +12,11 @@ define-filter "Starred" "flags # \"S\""
 auto-reload yes
 keep-articles-days 7
 cleanup-on-quit yes
-download-path "~/Downloads/podcasts"
+download-path "~/caos/podcasts"
 feed-sort-order title
 max-downloads 4
 player mplayer
-refresh-on-startup no
+refresh-on-startup yes
 suppress-first-reload yes
 reload-time 20
 reload-threads 2

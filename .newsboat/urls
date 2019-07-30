@@ -7,7 +7,6 @@ http://feeds.feedwrench.com/RubyRogues.rss
 http://mindthecloud.com/feed.xml
 http://labs.bluesoft.com.br/feed/
 http://jobstobedone.org/feed/
-http://500startups.libsyn.com//rss
 http://thedistance.com/feed.xml
 http://thisweekinstartups.com/feed
 http://freakonomics.com/feed/
@@ -18,14 +17,13 @@ http://syndication.howstuffworks.com/rss/tech
 http://www.howstuffworks.com/podcasts/techstuff.rss
 http://feeds.feedburner.com/tecnoblog
 http://blog.sanctum.geek.nz/feed/
-https://www.schneier.com/blog/atom.xml "tech"
-http://krebsonsecurity.com/feed/ "tech"
-http://tecnoblog.net/feed/ "tech"
-http://tecnoblog.net/podcast/feed/ "tech"
+https://www.schneier.com/blog/atom.xml tech
+http://krebsonsecurity.com/feed/ tech
+http://tecnoblog.net/feed/ tech
+http://tecnoblog.net/podcast/feed/ tech
 http://apublica.org/feed/
 http://www.cnet.com/rss/news/
 http://feeds.feedburner.com/newescapologist
-http://zdnet.com.feedsportal.com/c/35462/f/675633/index.rss
 http://rss.cnn.com/rss/cnn_latest
 http://feeds.guardian.co.uk/theguardian/rss
 https://firstlook.org/theintercept/feed/?rss
@@ -33,12 +31,9 @@ http://rss.nytimes.com/services/xml/rss/nyt/InternationalHome.xml
 http://www.correiobraziliense.com.br/rss/noticia/brasil/rss.xml "~Correio Braziliense - Brasil"
 http://www.correiobraziliense.com.br/rss/noticia/economia/rss.xml "~Correio Braziliense - Economia"
 http://www.correiobraziliense.com.br/rss/noticia/mundo/rss.xml "~Correio Braziliense - Mundo"
-http://www.cartacapital.com.br/politica/politica/atom.xml "~Carta Capital - Politica"
-http://www.cartacapital.com.br/economia/economia/atom.xml "~Carta Capital - Economia"
-http://www.cartacapital.com.br/internacional/internacional/atom.xml "~Carta Capital - Internacional"
-http://www.ft.com/rss/world "~Financial Times - International"
-https://feeds.feedburner.com/arstechnica/index
-https://feeds.feedburner.com/arstechnica/features
+https://www.cartacapital.com.br/feed "~Carta Capital"
+https://feeds.feedburner.com/arstechnica/index "~Ars technica - All"
+https://feeds.feedburner.com/arstechnica/features "~Ars technica - Features"
 http://rss.slashdot.org/Slashdot/slashdotMain
 http://bigdata-madesimple.com/feed/
 http://www.fluentcpp.com/feed/
@@ -51,7 +46,6 @@ https://sarahjeong.net/feed/
 https://dev.to/rss
 http://jvns.ca/atom.xml
 https://feeds.feedburner.com/developertea
-http://paradisefaçade.com/?format=rss
 https://blogs.technet.microsoft.com/jepayne/feed/
 https://eugene.kaspersky.com/feed/
 http://bhconsulting.ie/securitywatch/feed/
@@ -100,3 +94,16 @@ http://feeds.feedburner.com/MyFavoriteMurder
 https://feeds.feedburner.com/dangerousminds/dot/net
 http://www.counterpunch.org/feed/
 http://www.fsgworkinprogress.com/feed/
+https://www.kill-the-newsletter.com/feeds/wnsaaqq2d023yfl8yan5.xml
+https://www.kill-the-newsletter.com/feeds/g9vezrysgkkz71gzq6xd.xml
+https://blog.acolyer.org/feed/ "~The Morning Paper"
+http://caloni.com.br/index.xml "~Blog do Caloni"
+https://www.kill-the-newsletter.com/feeds/hlwxqebbehuepkfb4tu7.xml "~The New Yorker - Newsletter"
+http://www.newyorker.com/feed/everything "~The New Yorker - Everything feed"
+http://www.bonappetit.com/rss "~Bon appetit"
+http://www.epicurious.com/services/rss/articles "~Epicurious - Articles"
+http://www.epicurious.com/services/rss/recipes "~Epicurious - Recipes"
+https://www.wired.com/feed/rss "~Wired"
+https://thetakeout.com/rss "~The Takeout"
+https://aeon.co/feed.rss
+http://manualdousuario.net/feed/
