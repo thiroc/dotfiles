@@ -42,7 +42,7 @@ fi
 # ALIASES
 alias dotfiles='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias ls='ls --color=auto'
-alias mut='neomutt'
+alias mut='neomutt -F ~/.config/mutt/muttrc'
 alias ncm='ncmpcpp'
 alias nsb='newsboat'
 alias rai='rainbowstream'
