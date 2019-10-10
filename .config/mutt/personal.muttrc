@@ -1,2 +1,0 @@
-macro index,pager i1 '<sync-mailbox><enter-command>source "/home/thiroc/.config/mutt"/accounts/thiroc.muttrc<enter><change-folder>!<enter>;<check-stats>'
-source /home/thiroc/.config/mutt/accounts/thiroc.muttrc
