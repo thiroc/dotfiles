@@ -44,7 +44,7 @@ set laststatus=2
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/qt4
 " build tags of your own project with Ctrl-C
-map <C-c> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <C-c> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extras=+q .<CR>
 
 " OmniCppComplete
 filetype plugin on
@@ -165,7 +165,9 @@ let g:cpp_experimental_template_highlight = 1
 
 " configure tabwidth and insert spaces instead of tabs
 setlocal noexpandtab tabstop=4 shiftwidth=4
-autocmd FileType python setlocal expandtab tabstop=5 shiftwidth=4
+autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
+
+let mapleader="," " remap leader key
 
 " configure custom command to be run inside a tmux tab
 " viml map <leader>nt :call VimuxRunCommand("<command-to-be-run>")
