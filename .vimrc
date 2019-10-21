@@ -27,10 +27,10 @@ Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'vim-scripts/a.vim'
-Plugin 'vim-scripts/omnicppcomplete'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'steffanc/cscopemaps.vim'
+Plugin 'ycm-core/YouCompleteMe'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,21 +45,6 @@ set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/qt4
 " build tags of your own project with Ctrl-C
 map <C-c> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extras=+q .<CR>
-
-" OmniCppComplete
-filetype plugin on
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-" automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
