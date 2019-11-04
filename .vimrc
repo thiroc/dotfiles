@@ -148,11 +148,31 @@ set number
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
-" configure tabwidth and insert spaces instead of tabs
-setlocal noexpandtab tabstop=4 shiftwidth=4
-autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
+" Column Settings
+set cc=80
+set cino=:0,:(0
+highlight ColorColumn ctermbg=black
+" highlight extra whitespace
+highlight ExtraWhitespace ctermbg=blue guibg=blue
+match ExtraWhitespace /\s\+\%#@<!$/
+
+" host specific confs
+if hostname() == "ABELHA2626"
+	" configure tabwidth and insert spaces instead of tabs
+	setlocal noexpandtab tabstop=3 shiftwidth=3
+	autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
+
+else
+	" configure tabwidth and insert spaces instead of tabs
+	setlocal noexpandtab tabstop=4 shiftwidth=4
+	autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
+
+endif
 
 let mapleader="," " remap leader key
+
+map <C-J> :bnext<CR>
+map <C-K> :bprevious<CR>
 
 " configure custom command to be run inside a tmux tab
 " viml map <leader>nt :call VimuxRunCommand("<command-to-be-run>")
@@ -160,14 +180,6 @@ map <leader>ma :call VimuxRunCommand("make all")<CR>
 map <leader>mc :call VimuxRunCommand("make clean")<CR>
 map <leader>md :call VimuxRunCommand("make debug")<CR>
 
-map <C-S-j> :bnext<CR>
-map <C-S-k> :bprevious<CR>
-
-" Settings para usar na Aker:
-set cc=80
-set cino=:0,:(0
-highlight ColorColumn ctermbg=black
-
-highlight ExtraWhitespace ctermbg=blue guibg=blue
-match ExtraWhitespace /\s\+\%#@<!$/
+map <leader>gc :YmcCompleter GoToDeclaration
+map <leader>gf :YmcCompleter GoToDefinition
 
