@@ -6,11 +6,10 @@
 ###################################################################################################################
 ##################################################  Fonts  ########################################################
 
-URxvt*font:	    			xft:Terminus:pixelsize=13,style=regular
-URxvt*boldFont:				xft:Terminus:pixelsize=13,style=regular
-URxvt*letterSpace:			-3
+URxvt*font:	    			xft:Terminus:pixelsize=16,style=regular
+URxvt*boldFont:				xft:Terminus:pixelsize=16,style=regular
+URxvt*letterSpace:			+1
 URxvt.allow_bold:			true
-
 
 ###################################################################################################################
 ##################################################  Colors  #######################################################
