@@ -36,6 +36,9 @@ if [[ "$HOSTNAME" == "ABELHA2626" ]] # Autotrac host
 then
 	setxkbmap -layout br
 	export PATH=$PATH:/opt/toolchain/host/bin
+	TMOUT=0 # unset timeout for terminal
+	export TMOUT
+	readonly TMOUT
 	
 	GIT_SCRIPT=$HOME/bin/scripts/git-prompt.sh
 	if [ -f $GIT_SCRIPT  ]
@@ -46,11 +49,14 @@ then
 	fi
 
 	if [[ $DISPLAY ]]; then
-		if [[ -z "$TMUX" ]]; then # if $TMUX not defined
-			#ID=$(tmux ls | grep -vm1 attached | cut -d: -f1)
-			SID=$(tmux ls | grep trabalho | cut -d: -f1) # get session name
-			if [[ -z "$SID" ]]; then # if session don't with SID do not exist
-				exec ~/bin/scripts/tmux-session-trabalho.sh
+		if [ -z "$TMUX" ]; then # if $TMUX not defined
+			##ID=$(tmux ls | grep -vm1 attached | cut -d: -f1)
+			SESSIONS=$(tmux ls 2> /dev/null)
+			if [ -n "$SESSIONS" ]; then
+				SID=$(echo $SESSIONS | grep trabalho | cut -d: -f1) # get session name
+				if [ -z "$SID" ]; then # if session with SID do not exist
+					exec ~/bin/scripts/tmux-session-trabalho.sh
+				fi
 			fi
 		fi
 	fi
