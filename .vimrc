@@ -31,12 +31,14 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'steffanc/cscopemaps.vim'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'lyuts/vim-rtags'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 let g:airline#extensions#branch#enabled = 1
+let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 
@@ -67,6 +69,7 @@ else
 	set directory=~/.vim/vimtmp,.
 	set undofile		" keep an undo file (undo changes after closing)
 endif
+set ff=unix
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
@@ -82,13 +85,6 @@ map Q gq
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-"if &t_Co > 2 || has("gui_running")
-syntax on
-set hlsearch
-"endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -144,9 +140,24 @@ colorscheme Tomorrow-Night-Bright
 set relativenumber
 set number
 
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+"if &t_Co > 2 || has("gui_running")
+syntax on
+set hlsearch
+"endif
+
 " vim-cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
+
+" Adjusting colors for YouCompleteMe
+"highlight Pmenu ctermfg=15 ctermbg=1
+highlight YcmErrorLine ctermfg=13 ctermbg=15
+highlight YcmErrorSection ctermfg=13 ctermbg=15
+highlight YcmErrorSign ctermfg=13 ctermbg=15
+highlight YcmWarningSection ctermfg=13 ctermbg=9
+highlight YcmWarningSign ctermfg=13 ctermbg=9
 
 " Column Settings
 set cc=80
@@ -159,7 +170,8 @@ match ExtraWhitespace /\s\+\%#@<!$/
 " host specific confs
 if hostname() == "ABELHA2626"
 	" configure tabwidth and insert spaces instead of tabs
-	setlocal noexpandtab tabstop=3 shiftwidth=3
+	setlocal noexpandtab tabstop=4 shiftwidth=4
+	au BufEnter,BufNewFile *.h,*.cpp setlocal expandtab tabstop=3 shiftwidth=3
 	autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
 
 else
@@ -171,8 +183,8 @@ endif
 
 let mapleader="," " remap leader key
 
-map <C-J> :bnext<CR>
-map <C-K> :bprevious<CR>
+" map <C-S-J> :bnext<CR>
+" map <C-S-K> :bprevious<CR>
 
 " configure custom command to be run inside a tmux tab
 " viml map <leader>nt :call VimuxRunCommand("<command-to-be-run>")
@@ -180,6 +192,6 @@ map <leader>ma :call VimuxRunCommand("make all")<CR>
 map <leader>mc :call VimuxRunCommand("make clean")<CR>
 map <leader>md :call VimuxRunCommand("make debug")<CR>
 
-map <leader>gc :YmcCompleter GoToDeclaration
-map <leader>gf :YmcCompleter GoToDefinition
+map <leader>gc :YcmCompleter GoToDeclaration<CR>
+map <leader>gf :YcmCompleter GoToDefinition<CR>
 
