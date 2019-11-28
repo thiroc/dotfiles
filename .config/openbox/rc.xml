@@ -154,19 +154,19 @@
      cases. -->
   <margins>
     <top>0</top>
-    <bottom>25</bottom>
+    <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
   <dock>
-    <position>TopLeft</position>
+    <position>BottomRight</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
-    <noStrut>no</noStrut>
-    <stacking>Above</stacking>
+    <noStrut>yes</noStrut>
+    <stacking>Below</stacking>
     <!-- 'Above', 'Normal', or 'Below' -->
-    <direction>Vertical</direction>
+    <direction>Horizontal</direction>
     <!-- 'Vertical' or 'Horizontal' -->
     <autoHide>no</autoHide>
     <hideDelay>300</hideDelay>
@@ -368,12 +368,12 @@
     </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-		  <command>sudo ~/bin/scripts/bright up</command>
+        <command>sudo ~/bin/scripts/bright up</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-		  <command>sudo ~/bin/scripts/bright down</command>
+        <command>sudo ~/bin/scripts/bright down</command>
       </action>
     </keybind>
     <keybind key="W-k">

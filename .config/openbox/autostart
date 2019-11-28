@@ -6,6 +6,8 @@ if [[ "ABELHA2626" == "$HOSTNAME" ]]
 then
 	xrandr --output HDMI1 --left-of VGA1
 	xrdb $HOME/.Xresources.autotrac
+
+	trayer --align right --width 3 --iconspacing 5 --transparent true
 else
 	if which tint2 >/dev/null 2>&1; then
 		(sleep 2 && xcompmgr) &
