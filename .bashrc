@@ -52,9 +52,10 @@ then
 		if [ -z "$TMUX" ]; then # if $TMUX not defined
 			##ID=$(tmux ls | grep -vm1 attached | cut -d: -f1)
 			SESSIONS=$(tmux ls 2> /dev/null)
-			if [ -n "$SESSIONS" ]; then
+			if [[ -n "$SESSIONS" ]]; then
 				SID=$(echo $SESSIONS | grep trabalho | cut -d: -f1) # get session name
 				if [ -z "$SID" ]; then # if session with SID do not exist
+					echo eita
 					exec ~/bin/scripts/tmux-session-trabalho.sh
 				fi
 			fi

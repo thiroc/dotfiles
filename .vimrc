@@ -158,6 +158,8 @@ highlight YcmErrorSection ctermfg=13 ctermbg=15
 highlight YcmErrorSign ctermfg=13 ctermbg=15
 highlight YcmWarningSection ctermfg=13 ctermbg=9
 highlight YcmWarningSign ctermfg=13 ctermbg=9
+"highlight line numbers
+highlight LineNr ctermfg=2
 
 " Column Settings
 set cc=80
@@ -171,7 +173,7 @@ match ExtraWhitespace /\s\+\%#@<!$/
 if hostname() == "ABELHA2626"
 	" configure tabwidth and insert spaces instead of tabs
 	setlocal noexpandtab tabstop=4 shiftwidth=4
-	au BufEnter,BufNewFile *.h,*.cpp setlocal expandtab tabstop=3 shiftwidth=3
+	au BufEnter,BufNewFile *.h,*.c,*.cpp setlocal expandtab tabstop=3 shiftwidth=3
 	autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
 
 else
