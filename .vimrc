@@ -153,11 +153,11 @@ let g:cpp_experimental_template_highlight = 1
 
 " Adjusting colors for YouCompleteMe
 "highlight Pmenu ctermfg=15 ctermbg=1
-highlight YcmErrorLine ctermfg=13 ctermbg=15
-highlight YcmErrorSection ctermfg=13 ctermbg=15
-highlight YcmErrorSign ctermfg=13 ctermbg=15
-highlight YcmWarningSection ctermfg=13 ctermbg=9
-highlight YcmWarningSign ctermfg=13 ctermbg=9
+"highlight YcmErrorLine ctermfg=13 ctermbg=15
+"highlight YcmErrorSection ctermfg=13 ctermbg=15
+"highlight YcmErrorSign ctermfg=13 ctermbg=15
+"highlight YcmWarningSection ctermfg=13 ctermbg=9
+"highlight YcmWarningSign ctermfg=13 ctermbg=9
 "highlight line numbers
 highlight LineNr ctermfg=2
 
@@ -196,4 +196,6 @@ map <leader>md :call VimuxRunCommand("make debug")<CR>
 
 map <leader>gc :YcmCompleter GoToDeclaration<CR>
 map <leader>gf :YcmCompleter GoToDefinition<CR>
+
+noremap ;; :%s:::g<Left><Left><Left>
 

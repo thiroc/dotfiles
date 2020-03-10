@@ -6,9 +6,9 @@
 ###################################################################################################################
 ##################################################  Fonts  ########################################################
 
-URxvt*font:	    			xft:Terminus:pixelsize=16,style=regular
-URxvt*boldFont:				xft:Terminus:pixelsize=16,style=regular
-URxvt*letterSpace:			+1
+URxvt*font:	    			xft:Terminus:pixelsize=14,style=regular
+URxvt*boldFont:				xft:Terminus:pixelsize=14,style=regular
+URxvt.letterSpace:			+1
 URxvt.allow_bold:			true
 
 ###################################################################################################################
