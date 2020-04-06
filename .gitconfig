@@ -1,0 +1,19 @@
+[status]
+	showUntrackedFiles = no
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status --short --branch
+	ca = commit --all
+	cam = commit --all -m
+	dt = diff --word-diff --unified=10
+	df = diff --word-diff
+[difftool]
+	prompt = vimdiff
+[diff]
+	tool = vimdiff
+	algorithm = histogram
+[merge]
+	tool = vimdiff
+[core]
+	autocrlf = input
+	pager = less -RFX
