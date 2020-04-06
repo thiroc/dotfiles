@@ -1,19 +1,17 @@
-# Start ssh-agent in background
+# General config
+
+## Start ssh-agent in background
 eval "$(ssh-agent -s)"
 
+## tray application
+trayer --align right --widthtype pixel --width 50 --iconspacing 3 --transparent true --tint 0
 
+# Host-specific config
 if [[ "ABELHA2626" == "$HOSTNAME" ]]
 then
 	xrandr --output HDMI1 --left-of VGA1
 	xrdb $HOME/.Xresources.autotrac
-
-	trayer --align right --width 3 --iconspacing 5 --transparent true
 else
-	if which tint2 >/dev/null 2>&1; then
-		(sleep 2 && xcompmgr) &
-		(sleep 2 && tint2) &
-	fi
-
 	# Set wallpaper
 	feh --bg-fill ~/img/wallpapers/wallpaper-2560x1440-bigcity.jpg
 
