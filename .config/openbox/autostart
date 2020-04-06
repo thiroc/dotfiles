@@ -3,6 +3,9 @@
 ## Start ssh-agent in background
 eval "$(ssh-agent -s)"
 
+## Set keyboard layout
+setxkbmap -layout us -variant intl
+
 ## tray application
 trayer --align right --widthtype pixel --width 50 --iconspacing 3 --transparent true --tint 0
 
