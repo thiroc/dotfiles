@@ -43,8 +43,8 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 
 " configure tags - add additional tags here or comment out not-used ones
-set tags+=~/.vim/tags/cpp
-set tags+=~/.vim/tags/qt4
+set tags+=$HOME/.vim/tags/cpp
+set tags+=$HOME/.vim/tags/qt4
 " build tags of your own project with Ctrl-C
 map <C-c> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extras=+q .<CR>
 
@@ -65,8 +65,8 @@ if has("vms")
 else
 	set backup		" keep a backup file (restore to previous version)
 	" Setting up backup folder
-	set backupdir=~/.vim/vimtmp,.
-	set directory=~/.vim/vimtmp,.
+	set backupdir=$HOME/.vim/vimtmp,.
+	set directory=$HOME/.vim/vimtmp,.
 	set undofile		" keep an undo file (undo changes after closing)
 endif
 set ff=unix
@@ -158,7 +158,7 @@ let g:cpp_experimental_template_highlight = 1
 "highlight YcmErrorSign ctermfg=13 ctermbg=15
 "highlight YcmWarningSection ctermfg=13 ctermbg=9
 "highlight YcmWarningSign ctermfg=13 ctermbg=9
-"highlight line numbers
+" Highlighting line numbers
 highlight LineNr ctermfg=2
 
 " Column Settings
