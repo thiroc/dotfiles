@@ -6,9 +6,6 @@ eval "$(ssh-agent -s)"
 ## Set keyboard layout
 setxkbmap -layout us -variant intl
 
-## tray application
-trayer --align right --widthtype pixel --width 50 --iconspacing 3 --transparent true --tint 0
-
 # Host-specific config
 if [[ "ABELHA2626" == "$HOSTNAME" ]]
 then
@@ -16,9 +13,12 @@ then
 	xrdb $HOME/.Xresources.autotrac
 else
 	# Set wallpaper
-	feh --bg-fill ~/img/wallpapers/wallpaper-2560x1440-bigcity.jpg
+	feh --bg-fill $HOME/img/wallpapers/wallpaper-2560x1440-bigcity.jpg
 
 	# Set an slower mouse aceleration
 	xinput --set-prop "pointer:Genius Maurus Gaming Mouse" "Device Accel Constant Deceleration" 2.5
 fi
+
+## tray application
+trayer --align right --widthtype pixel --width 50 --iconspacing 3 --transparent true --tint 0
 
