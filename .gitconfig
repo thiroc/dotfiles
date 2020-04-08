@@ -17,3 +17,12 @@
 [core]
 	autocrlf = input
 	pager = less -RFX
+[color]
+	diff = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+	status = auto
+[color "status"]
+	added = blue
