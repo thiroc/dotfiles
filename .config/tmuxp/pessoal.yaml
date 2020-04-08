@@ -1,0 +1,20 @@
+session_name: pessoal
+start_directory: '~'
+windows:
+  - window_name: 'monitor/files'
+    focus: true
+    layout: main-vertical
+    panes:
+      - htop
+      - neofetch
+      - ranger
+  - window_name: org
+    layout: even-horizontal
+    panes:
+      - task
+      - neomutt
+  - window_name: feeds
+    layout: even-horizontal
+    panes:
+      - rainbowstream
+      - newsboat

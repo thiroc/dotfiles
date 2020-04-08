@@ -19,7 +19,8 @@ export EDITOR="vim"
 export VISUAL="vim"
 export BROWSER="w3m"
 export GBROWSER="firefox"
-export XDG_CONFIG_HOME="~/.config"
+export XDG_CONFIG_HOME="$HOME/.config"
+export TMUXP_CONFIGDIR=$XDG_CONFIG_HOME
 
 # Function for tmux alias, that starts new session named after the current dir
 function tmn() {
