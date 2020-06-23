@@ -62,7 +62,7 @@ rofi.color-normal: #343740, #bec7d5, #343740, #4a94b5, #eee8d5
 ###################################################################################################################
 ###########################################  Enable link support  #################################################
 
-URxvt.perl-ext-common:			default,matcher,tabbedex,vtwheel,clipboard
+URxvt.perl-ext-common:			default,matcher,clipboard
 !URxvt.matcher.button:			1
 URxvt.perl-ext:				default,url-select
 URxvt.keysym.M-u:			perl:url-select:select_next
