@@ -1,5 +1,5 @@
 # vim: ft=conf nospell
-browser w3m %u
+browser lynx %u
 always-display-description true
 goto-next-feed no
 save-path ~/caos
