@@ -3,7 +3,7 @@ start_directory: '~'
 windows:
   - window_name: 'monitor/files'
     focus: true
-    layout: main-vertical
+    layout: 61f2,213x60,0,0{120x60,0,0,1,92x60,121,0[92x29,121,0,2,92x30,121,30,3]}
     panes:
       - htop
       - neofetch
@@ -11,10 +11,10 @@ windows:
   - window_name: org
     layout: even-horizontal
     panes:
-      - task
+      - shell_command: task
       - neomutt
   - window_name: feeds
     layout: even-horizontal
     panes:
       - rainbowstream
-      - newsboat
+      - shell_command: newsboat
