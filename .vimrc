@@ -24,7 +24,6 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
-Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-airline/vim-airline'
@@ -46,7 +45,6 @@ set laststatus=2
 set tags+=$HOME/.vim/tags/cpp
 set tags+=$HOME/.vim/tags/qt4
 " build tags of your own project with Ctrl-C
-map <C-c> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extras=+q .<CR>
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -74,6 +72,8 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+set ignorecase		" needed for smartcase search
+set smartcase		" case insensitive search if in lowercase
 set hidden
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
@@ -183,10 +183,10 @@ else
 
 endif
 
-let mapleader="," " remap leader key
+nmap <C-N> :bnext<CR>
+nmap <C-P> :bprevious<CR>
 
-" map <C-S-J> :bnext<CR>
-" map <C-S-K> :bprevious<CR>
+let mapleader="," " remap leader key
 
 " configure custom command to be run inside a tmux tab
 " viml map <leader>nt :call VimuxRunCommand("<command-to-be-run>")
@@ -194,8 +194,11 @@ map <leader>ma :call VimuxRunCommand("make all")<CR>
 map <leader>mc :call VimuxRunCommand("make clean")<CR>
 map <leader>md :call VimuxRunCommand("make debug")<CR>
 
-map <leader>gc :YcmCompleter GoToDeclaration<CR>
-map <leader>gf :YcmCompleter GoToDefinition<CR>
+map <leader>yd :YcmCompleter GoToDeclaration<CR>
+map <leader>yf :YcmCompleter GoToDefinition<CR>
+map <leader>yu :YcmCompleter GoToReferences<CR>
+map <leader>yx :YcmCompleter FixIt<CR>
+map <leader>yr :YcmCompleter RefactorRename<Space>
 
 noremap ;; :%s:::g<Left><Left><Left>
 
