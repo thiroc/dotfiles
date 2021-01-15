@@ -26,3 +26,6 @@
 	status = auto
 [color "status"]
 	added = blue
+
+[include]
+	path = .gitconfig-user
