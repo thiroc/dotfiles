@@ -1,24 +1,31 @@
 # General config
 
 ## Start ssh-agent in background
-eval "$(ssh-agent -s)"
+eval "$(ssh-agent -s)" &
 
 ## Set keyboard layout
-setxkbmap -layout us -variant intl
+setxkbmap -layout us -variant intl &
 
 # Host-specific config
-if [[ "ABELHA2626" == "$HOSTNAME" ]]
+if [[ "ABELHA2626" == "$HOSTNAME" ]] #work laptop
 then
-	xrandr --output HDMI1 --left-of VGA1
-	xrdb $HOME/.Xresources.autotrac
-else
+	xrandr --output HDMI1 --left-of VGA1 &
+	xrdb $HOME/.Xresources.autotrac &
+
+	## tray application
+	trayer --align right --widthtype pixel --width 50 --iconspacing 3 --transparent true --tint 0 &
+else #home desktop
 	# Set wallpaper
-	feh --bg-fill $HOME/img/wallpapers/wallpaper-2560x1440-bigcity.jpg
+	feh --bg-fill $HOME/img/wallpapers/wallpaper-2560x1440-bigcity.jpg &
 
 	# Set an slower mouse aceleration
-	xinput --set-prop "pointer:Genius Maurus Gaming Mouse" "Device Accel Constant Deceleration" 2.5
+	xinput --set-prop "pointer:Genius Maurus Gaming Mouse" "Device Accel Constant Deceleration" 2.5 &
+
+	## tray application
+	trayer --align right --widthtype pixel --width 50 --iconspacing 3 --transparent true --tint 0 &
+
+	( pulseaudio --start; cadence --minimized ) &
+	nextcloud &
 fi
 
-## tray application
-trayer --align right --widthtype pixel --width 50 --iconspacing 3 --transparent true --tint 0
 
