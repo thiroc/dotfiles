@@ -4,7 +4,7 @@
 eval "$(ssh-agent -s)"
 
 ## Set keyboard layout
-setxkbmap -layout us -variant intl
+setxkbmap -layout us -variant intl -option "caps:swapescape"
 
 # Host-specific config
 if [[ "ABELHA2626" == "$HOSTNAME" ]]
