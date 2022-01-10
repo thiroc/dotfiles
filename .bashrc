@@ -1,7 +1,6 @@
 #
 # ~/.bashrc
 #
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -28,6 +27,9 @@ function tmn() {
 }
 export -f tmn
 
+## Set keyboard layout
+setxkbmap -layout us -variant intl -option "caps:swapescape"
+
 # ALIASES
 alias dt='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias ls='ls --color=auto'
@@ -41,14 +43,25 @@ alias tae='task proj:estudos'
 alias tap='task proj:pessoal'
 alias tat='task proj:trabalho'
 
+# Definitions for fzf/rgrep below
+if type rg &> /dev/null; then
+	export FZF_DEFAULT_COMMAND='rg --files'
+	export FZF_DEFAULT_OPTS='--height 50% --border'
+fi
+
 # Host-specific configs
 if [[ "$HOSTNAME" == "ABELHA2626" ]] # Autotrac host
 then
+	# setup gdb compiled for arm target with UCC bin
+	export PROJUCC=$HOME/projetos/SDP_UCC
+	alias guc='$PROJUCC/tools.buildroot/output/build/host-gdb-8.2.1/gdb/gdb $PROJUCC/ucc/App/UCC/arm-bin/UCC'
+	
 	export PATH=$PATH:/opt/toolchain/host/bin
 	TMOUT=0 # unset timeout for terminal
-	export TMOUT
-	readonly TMOUT
-	
+
+	xprop -name 'urxvt' -format _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS 2
+	dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:swapescape']"
+
 else # Home host
 
 	# The next line updates PATH for the Google Cloud SDK.
@@ -58,4 +71,3 @@ else # Home host
 	if [ -f '/home/thiroc/caos/google-cloud-sdk/completion.bash.inc' ]; then . '/home/thiroc/caos/google-cloud-sdk/completion.bash.inc'; fi
 
 fi
-

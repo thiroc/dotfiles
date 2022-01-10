@@ -31,6 +31,9 @@ Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'steffanc/cscopemaps.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'lyuts/vim-rtags'
+" fzf requires installed packages: fzf, rgrep
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -169,20 +172,6 @@ highlight ColorColumn ctermbg=black
 highlight ExtraWhitespace ctermbg=blue guibg=blue
 match ExtraWhitespace /\s\+\%#@<!$/
 
-" host specific confs
-if hostname() == "ABELHA2626"
-	" configure tabwidth and insert spaces instead of tabs
-	setlocal noexpandtab tabstop=4 shiftwidth=4
-	au BufEnter,BufNewFile *.h,*.c,*.cpp setlocal expandtab tabstop=3 shiftwidth=3
-	autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
-
-else
-	" configure tabwidth and insert spaces instead of tabs
-	setlocal noexpandtab tabstop=4 shiftwidth=4
-	autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
-
-endif
-
 nmap <C-N> :bnext<CR>
 nmap <C-P> :bprevious<CR>
 
@@ -190,15 +179,47 @@ let mapleader="," " remap leader key
 
 " configure custom command to be run inside a tmux tab
 " viml map <leader>nt :call VimuxRunCommand("<command-to-be-run>")
-map <leader>ma :call VimuxRunCommand("make all")<CR>
-map <leader>mc :call VimuxRunCommand("make clean")<CR>
-map <leader>md :call VimuxRunCommand("make debug")<CR>
+nnoremap <leader>fn :call VimuxRunCommand("find . -name ''")<Left><Left><Left>
+nnoremap <leader>fi :call VimuxRunCommand("find . -iname ''")<Left><Left><Left>
+nnoremap <leader>fg :call VimuxRunCommand("find . -name '' -exec grep '' {} \+")<Left><Left><Left>
+nmap <leader>ma :call VimuxRunCommand("make all")<CR>
+nmap <leader>mc :call VimuxRunCommand("make clean")<CR>
+nmap <leader>md :call VimuxRunCommand("make debug")<CR>
 
-map <leader>yd :YcmCompleter GoToDeclaration<CR>
-map <leader>yf :YcmCompleter GoToDefinition<CR>
-map <leader>yu :YcmCompleter GoToReferences<CR>
-map <leader>yx :YcmCompleter FixIt<CR>
-map <leader>yr :YcmCompleter RefactorRename<Space>
+nmap <leader>yd :YcmCompleter GoToDeclaration<CR>
+nmap <leader>yf :YcmCompleter GoToDefinition<CR>
+nmap <leader>yu :YcmCompleter GoToReferences<CR>
+nmap <leader>yx :YcmCompleter FixIt<CR>
+nmap <leader>yr :YcmCompleter RefactorRename<Space>
 
-noremap ;; :%s:::g<Left><Left><Left>
+nnoremap ;; :%s:::g<Left><Left><Left>
+
+" Command to Rg ignore filenames
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
+" Maps for fzf
+nnoremap <silent> <Leader>F :Files<CR>
+nnoremap <silent> <Leader>f :Rg<CR>
+
+" host specific confs
+if hostname() == "ABELHA2626" " Autotrac config
+	set visualbell
+
+	" configure tabwidth and insert spaces instead of tabs
+	setlocal noexpandtab tabstop=4 shiftwidth=4
+	au BufEnter,BufNewFile *.h,*.c,*.cpp setlocal expandtab tabstop=3 shiftwidth=3 cc=172
+	autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
+
+	" configure custom command to be run inside a tmux tab
+	" viml map <leader>nt :call VimuxRunCommand("<command-to-be-run>")
+	autocmd BufNewFile,BufRead ~/projetos/SDP_UCC/ucc/* nnoremap <leader>ma :call VimuxRunCommand("cd ./UccImageBaseDir && make -l dep all image ; cd -")<CR>
+	autocmd BufNewFile,BufRead ~/projetos/SDP_UCC/ucc/* nnoremap <leader>mc :call VimuxRunCommand("cd ./App && make clean CROSS=arm ; cd -")<CR>
+	autocmd BufNewFile,BufRead ~/projetos/SDP_UCC/ucc/* nnoremap <leader>ms :call VimuxRunCommand("./setup-projects.sh ssh")<CR>
+
+else
+	" configure tabwidth and insert spaces instead of tabs
+	setlocal noexpandtab tabstop=4 shiftwidth=4
+	autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4
+
+endif
 

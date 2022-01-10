@@ -2,9 +2,12 @@
 	showUntrackedFiles = no
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	rb = rebase --rebase-merges
+	mnf = merge --no-ff
 	st = status --short --branch
 	ca = commit --all
 	cam = commit --all -m
+	ck = checkout
 	dt = diff --word-diff --unified=10
 	df = diff --word-diff
 [difftool]
